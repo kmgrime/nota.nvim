@@ -1,0 +1,3 @@
+-- Auto-load: registers commands on startup so lazy-loading works
+-- This file runs automatically when the plugin is on runtimepath.
+-- Actual logic is deferred to require("nota").setup().
