@@ -59,11 +59,13 @@ For example, entering `meeting notes` on 2026-04-15 creates:
 With the following template:
 
 ```markdown
-# 2026-04-15-meeting_notes
+---
+Date: 2026-04-15
+Subject: meeting notes
+Description: 
+---
 
-
-
-## Meeting Notes
+### Note1
 
 - 
 ```
