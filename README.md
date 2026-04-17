@@ -15,7 +15,7 @@ Create dated notes with a single command, organized into year/month/day director
   "kmgrime/nota.nvim",
   config = function()
     require("nota").setup({
-      notes_path = "~/notes/journal", -- path to directory of your notes
+      notes_path = "~/notes/journal",
     })
   end,
 }
@@ -28,7 +28,7 @@ use({
   "kmgrime/nota.nvim",
   config = function()
     require("nota").setup({
-      notes_path = "~/notes/journal", -- path to directory of your notes
+      notes_path = "~/notes/journal",
     })
   end,
 })
