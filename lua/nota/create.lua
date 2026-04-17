@@ -10,16 +10,6 @@ local function sanitize(subject)
 	return s
 end
 
----@param subject string
----@return string
-local function prettify(subject)
-	local s = subject:gsub("[_%-]", " ")
-	s = s:gsub("(%a)([%w]*)", function(first, rest)
-		return first:upper() .. rest
-	end)
-	return s
-end
-
 ---@param date_str string e.g. "2026-04-15"
 ---@param sanitized_subject string e.g. "meeting_notes"
 ---@return string dir, string filepath
@@ -39,14 +29,16 @@ end
 ---@param original_subject string
 ---@return string
 local function template(date_str, sanitized_subject, original_subject)
-	local filename = date_str .. "-" .. sanitized_subject
-	local pretty = prettify(original_subject)
+	local cfg = require("nota").config
+	local formatted_date = os.date(cfg.date_format, os.time())
 	return table.concat({
-		"# " .. filename,
+		"---",
+		"Date: " .. formatted_date,
+		"Subject: " .. original_subject,
+		"Description: ",
+		"---",
 		"",
-		"",
-		"",
-		"## " .. pretty,
+		"### Note1",
 		"",
 		"- ",
 	}, "\n")
