@@ -30,8 +30,7 @@ end
 ---@return string
 local function template(date_str, sanitized_subject, original_subject)
 	local cfg = require("nota").config
-	local date_format = cfg.date_format or "%d-%m-%Y"
-	local formatted_date = os.date(date_format, os.time())
+	local formatted_date = os.date(cfg.date_format, os.time())
 	return table.concat({
 		"---",
 		"Date: " .. formatted_date,
